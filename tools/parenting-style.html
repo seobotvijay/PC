@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Know Your Parenting Style | ParentCircle</title>
+<meta name="description" content="A 90-second reflection: twelve everyday situations from Indian homes, written for the age your child is right now.">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1EFF7; --card:#FFFFFF; --ink:#211D33; --ink-soft:#5A5470;
+    --line:#D9D4E6; --marigold:#E29612; --rose:#B94674; --teal:#22796A; --indigo:#4B3F8F;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#16131F; --card:#1F1B2C; --ink:#EDE9F5; --ink-soft:#A9A2C0;
+      --line:#332C48; --marigold:#F0B44A; --rose:#E0799F; --teal:#5FBBA8; --indigo:#9F91E8;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#16131F; --card:#1F1B2C; --ink:#EDE9F5; --ink-soft:#A9A2C0;
+    --line:#332C48; --marigold:#F0B44A; --rose:#E0799F; --teal:#5FBBA8; --indigo:#9F91E8;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit}
+  .sitebar{border-bottom:1px solid var(--line);background:var(--card)}
+  .sitebar-row{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+  .sitebar a.home{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--ink)}
+  .sitebar a.home .dot{width:8px;height:8px;border-radius:50%;background:var(--marigold)}
+  .sitebar a.home:hover{color:var(--indigo)}
+  .sitebar .crumb{font-size:.85rem;color:var(--ink-soft)}
+  .wrap{max-width:640px;margin:0 auto;padding:28px 20px 64px}
+  .brandline{font-size:.78rem;color:var(--ink-soft);display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);display:inline-block;margin-right:7px;vertical-align:1px}
+  h1{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(2.1rem,7vw,3.1rem);line-height:1.08;margin:0 0 16px;letter-spacing:-.01em}
+  h1 em{font-style:italic}
+  .lede{font-family:'Newsreader',Georgia,serif;font-size:1.12rem;line-height:1.62;color:var(--ink-soft);max-width:52ch;margin:0 0 26px}
+  .meta{display:flex;gap:22px;flex-wrap:wrap;font-size:.85rem;color:var(--ink-soft);margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  button{font-family:inherit;font-size:1rem;cursor:pointer}
+  .btn{background:var(--ink);color:var(--paper);border:none;border-radius:100px;padding:15px 30px;font-weight:600;transition:opacity .12s ease,transform .12s ease}
+  .btn:hover{opacity:.88}
+  .btn:active{transform:scale(.98)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn.small{padding:11px 20px;font-size:.9rem}
+  :focus-visible{outline:2.5px solid var(--indigo);outline-offset:3px}
+
+  /* age gate */
+  .ages{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:0 0 18px}
+  @media (max-width:430px){.ages{grid-template-columns:1fr}}
+  .age{
+    background:var(--card);border:1.5px solid var(--line);border-radius:16px;
+    padding:18px 17px;text-align:left;color:var(--ink);transition:border-color .12s ease,transform .12s ease;
+  }
+  .age:hover{border-color:var(--indigo);transform:translateY(-1px)}
+  .age b{display:block;font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:1.55rem;line-height:1.1;margin-bottom:5px}
+  .age span{font-size:.85rem;color:var(--ink-soft);line-height:1.4;display:block}
+  .aside{font-size:.87rem;color:var(--ink-soft);line-height:1.55;max-width:46ch}
+
+  /* quiz */
+  .prog{display:flex;gap:5px;margin-bottom:26px}
+  .prog i{flex:1;height:3px;background:var(--line);border-radius:2px}
+  .prog i.on{background:var(--marigold)}
+  .qnum{font-size:.82rem;color:var(--ink-soft);margin-bottom:10px}
+  .qtext{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(1.42rem,4.5vw,1.85rem);line-height:1.3;margin:0 0 24px;max-width:27ch}
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{display:flex;align-items:flex-start;gap:13px;width:100%;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px 17px;color:var(--ink);font-size:1rem;line-height:1.45;transition:border-color .12s ease,background .12s ease}
+  .opt:hover{border-color:var(--indigo)}
+  .opt .key{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);margin-top:1px;transition:all .12s ease}
+  .opt.sel{border-color:var(--indigo);background:color-mix(in srgb,var(--indigo) 8%,var(--card))}
+  .opt.sel .key{background:var(--indigo);border-color:var(--indigo);box-shadow:inset 0 0 0 3.5px var(--card)}
+  .navrow{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
+  .back{background:none;border:none;color:var(--ink-soft);padding:8px 0;font-size:.92rem}
+  .back:hover{color:var(--ink)}
+
+  /* result */
+  .badge{display:inline-block;font-size:.78rem;font-weight:600;color:#fff;padding:5px 13px;border-radius:100px;margin-bottom:14px}
+  .styleName{font-family:'Newsreader',Georgia,serif;font-weight:300;font-style:italic;font-size:clamp(2.4rem,9vw,3.6rem);line-height:1;margin:0 0 10px}
+  .styleLine{font-size:1.05rem;color:var(--ink-soft);max-width:44ch;margin:0 0 8px}
+  .secondary{font-size:.95rem;color:var(--ink-soft);margin:0 0 26px}
+  .secondary b{color:var(--ink);font-weight:600}
+  .mapcard{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:20px;margin-bottom:22px}
+  .mapcard h3,.sec h3{font-size:.95rem;font-weight:600;margin:0 0 14px}
+  .grid{position:relative;width:100%;aspect-ratio:1/.82;border-radius:12px;overflow:hidden;background:color-mix(in srgb,var(--indigo) 6%,var(--card))}
+  .grid svg{width:100%;height:100%;display:block}
+  .axl{font-size:.72rem;fill:var(--ink-soft)}
+  .zone{font-size:.7rem;fill:var(--ink-soft);opacity:.75}
+  .sec{margin-bottom:22px}
+  .sec ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+  .sec li{display:flex;gap:11px;font-size:.98rem;line-height:1.5}
+  .tick{flex:none;width:18px;height:18px;border-radius:50%;margin-top:3px;display:grid;place-items:center;font-size:.7rem;font-weight:700;color:#fff}
+  .good .tick{background:var(--teal)}
+  .watch .tick{background:var(--marigold)}
+  .todo .tick{background:var(--indigo)}
+  .agetag{font-size:.72rem;color:var(--ink-soft);border:1px solid var(--line);border-radius:100px;padding:2px 9px;margin-left:8px;white-space:nowrap}
+  .feel{font-family:'Newsreader',Georgia,serif;font-size:1.15rem;line-height:1.6;font-style:italic;border-left:3px solid var(--rose);padding:4px 0 4px 18px;margin:26px 0}
+  .dist{display:flex;flex-direction:column;gap:9px}
+  .drow{display:grid;grid-template-columns:88px 1fr 40px;gap:10px;align-items:center;font-size:.87rem}
+  .bar{height:8px;border-radius:5px;background:var(--line);overflow:hidden}
+  .bar span{display:block;height:100%;background:var(--indigo);border-radius:5px}
+  .drow.me{font-weight:600}
+  .drow.me .bar span{background:var(--rose)}
+  .hooks{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 20px}
+  .note{font-size:.82rem;color:var(--ink-soft);line-height:1.55;border-top:1px solid var(--line);padding-top:16px;margin-top:26px}
+  .prev{font-size:.87rem;color:var(--ink-soft);background:var(--card);border:1.5px dashed var(--line);border-radius:12px;padding:12px 14px;margin-bottom:20px}
+  .hidden{display:none}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sitebar">
+  <div class="sitebar-row">
+    <a class="home" href="../index.html"><span class="dot"></span>ParentCircle</a>
+    <span class="crumb">Tools &rsaquo; Know Your Parenting Style</span>
+  </div>
+</div>
+<div class="wrap">
+  <div class="brandline"><span><span class="dot"></span>ParentCircle</span><span id="tag">A 90-second reflection</span></div>
+
+  <section id="intro">
+    <h1>Know your <em>parenting style</em></h1>
+    <p class="lede">Twelve everyday situations from Indian homes, written for the age your child is right now. Answer as you actually would, not as you think you should. There is no best result here.</p>
+    <div class="meta"><span><b>12</b> questions</span><span><b>90</b> seconds</span><span><b>5</b> styles</span></div>
+    <div id="prevWrap"></div>
+    <button class="btn" id="start">Start</button>
+  </section>
+
+  <section id="gate" class="hidden">
+    <h1 style="font-size:clamp(1.7rem,5.5vw,2.4rem);margin-bottom:10px">How old is your child?</h1>
+    <p class="lede" style="font-size:1rem;margin-bottom:22px">The questions change with the age, because parenting a four-year-old and parenting a sixteen-year-old are not the same job.</p>
+    <div class="ages" id="ages"></div>
+    <p class="aside">More than one child? Answer for the one who takes the most of your attention right now. You can take it again for the others.</p>
+  </section>
+
+  <section id="quiz" class="hidden">
+    <div class="prog" id="prog"></div>
+    <div class="qnum" id="qnum"></div>
+    <h2 class="qtext" id="qtext"></h2>
+    <div class="opts" id="opts"></div>
+    <div class="navrow">
+      <button class="back" id="back">Back</button>
+      <span style="font-size:.85rem;color:var(--ink-soft)">Pick the one closest to you</span>
+    </div>
+  </section>
+
+  <section id="result" class="hidden"></section>
+</div>
+
+<script>
+const BANDS = [
+  {k:'a', label:'2 to 5', sub:'Toddler and pre-school'},
+  {k:'b', label:'6 to 10', sub:'Primary school'},
+  {k:'c', label:'11 to 13', sub:'Pre-teen'},
+  {k:'d', label:'14 to 18', sub:'Teenager'}
+];
+
+const BANK = {
+a:[
+ ["Your child refuses to eat what you've cooked, for the third day running.",[
+  ["Ask what they don't like and offer one choice within limits","guide"],
+  ["They sit at the table until it's finished","commander"],
+  ["Worry about nutrition and add a health drink","coach"],
+  ["Make something else they'll actually eat","friend"]]],
+ ["Your four-year-old wants to climb the play structure on their own.",[
+  ["Let them, standing a few steps back","guide"],
+  ["No. Sit down where I told you","commander"],
+  ["Hold their hand the whole way up","protector"],
+  ["Let them do whatever they like","friend"]]],
+ ["Your child screams and cries in the middle of a shop.",[
+  ["Take them aside, wait it out calmly, talk after","guide"],
+  ["Tell them to stop at once","commander"],
+  ["Feel everyone watching and rush to end it","protector"],
+  ["Say other children don't behave like this","coach"]]],
+ ["Playschool asks which activity to enrol your child in.",[
+  ["Ask what they enjoy, and watch what they pick","guide"],
+  ["Something that builds a skill early — phonics, abacus","coach"],
+  ["Whatever keeps them close and supervised","protector"],
+  ["Whatever they point at that day","friend"]]],
+ ["Your toddler falls while running in the hall.",[
+  ["Pick them up at once and stop the running","protector"],
+  ["Say I warned them not to run","commander"],
+  ["Tell them to get up, they're fine","coach"],
+  ["Comfort them with a biscuit or the phone","friend"]]],
+ ["Bedtime at your house is…",[
+  ["The same routine each night, with some flexibility","guide"],
+  ["Early and fixed — sleep matters for the brain","coach"],
+  ["Lights off at the time I say","commander"],
+  ["Whenever they fall asleep","friend"]]],
+ ["Someone asks what you want your child to become.",[
+  ["Too early — I want to see what they're drawn to","guide"],
+  ["Something respectable. We'll decide","commander"],
+  ["Something safe, and near home","protector"],
+  ["Anything, as long as they're happy","friend"]]],
+ ["A relative says you're spoiling the child.",[
+  ["Listen, keep what's useful, ignore the rest","guide"],
+  ["They may be right — children need firmness early","commander"],
+  ["It bothers me for days","protector"],
+  ["Point out how advanced my child already is","coach"]]],
+ ["Your child scribbles all over the wall.",[
+  ["Show them where drawing is allowed, and clean it together","guide"],
+  ["Clean it myself before anyone sees","protector"],
+  ["Take the crayons away until they earn them back","coach"],
+  ["Laugh, take a photo, leave it","friend"]]],
+ ["Your child asks for a toy at the shop.",[
+  ["No means no, every time","commander"],
+  ["Only if they've done well with their learning","coach"],
+  ["Only if it's safe for their age","protector"],
+  ["I usually give in","friend"]]],
+ ["Another child pushes yours at the park.",[
+  ["Ask my child what happened and what they want to do","guide"],
+  ["Tell mine to stay away from that child","commander"],
+  ["Tell mine to stand up for themselves","coach"],
+  ["Distract them with something else","friend"]]],
+ ["More than anything at this age, you want your child to be…",[
+  ["Curious, and able to say what they feel","guide"],
+  ["Well-behaved in front of others","commander"],
+  ["Safe, healthy and close to me","protector"],
+  ["Ahead of the others in the class","coach"]]]
+],
+b:[
+ ["Your child comes home with a low mark in a class test.",[
+  ["Sit down and ask what went wrong","guide"],
+  ["Cut playtime until it improves","commander"],
+  ["Extra practice sheets every evening","coach"],
+  ["Tell them it's only a class test","friend"]]],
+ ["Your nine-year-old wants to go to a friend's house after school.",[
+  ["Yes, if I know the family and they're back by six","guide"],
+  ["Not on a school day","commander"],
+  ["Only if I drop and pick them up","protector"],
+  ["Yes, whenever they like","friend"]]],
+ ["Your child says, “You always shout at me.”",[
+  ["Stop and ask them to explain","guide"],
+  ["Tell them not to answer back","commander"],
+  ["Feel guilty about it for days","protector"],
+  ["Say it's because I want them to do well","coach"]]],
+ ["Time to choose a hobby class for the year.",[
+  ["Ask what they'd like to try","guide"],
+  ["Something useful later — chess, coding, abacus","coach"],
+  ["Something close to home, with people I know","protector"],
+  ["Whatever they say, even if they quit in a month","friend"]]],
+ ["Your child scrapes a knee falling off the cycle.",[
+  ["Stop the cycling for a while","protector"],
+  ["Remind them I said to be careful","commander"],
+  ["Tell them to get back on","coach"],
+  ["Comfort them and buy them something","friend"]]],
+ ["Homework time in your house looks like…",[
+  ["They do it themselves; I'm around if they're stuck","guide"],
+  ["I sit with them and check every answer","coach"],
+  ["Fixed hours, no excuses","commander"],
+  ["No fixed rule — whenever they feel like it","friend"]]],
+ ["Your child says they want to be a YouTuber when they grow up.",[
+  ["Ask what they like about it, and take it seriously","guide"],
+  ["Tell them that isn't a real career","commander"],
+  ["Worry about what they're watching online","protector"],
+  ["Fine, once they've secured a proper degree","coach"]]],
+ ["A relative says your child is too pampered.",[
+  ["Listen, keep what's useful, ignore the rest","guide"],
+  ["They have a point about discipline","commander"],
+  ["It upsets me for days","protector"],
+  ["Compare my child's marks with theirs","coach"]]],
+ ["Your child loses an expensive water bottle at school.",[
+  ["Talk about being careful and how to keep track of things","guide"],
+  ["Replace it quietly — they'll be upset","protector"],
+  ["They use an old one until they show responsibility","coach"],
+  ["It's just a bottle","friend"]]],
+ ["How often do you say no to what your child asks for?",[
+  ["Often — children shouldn't get everything","commander"],
+  ["When it gets in the way of studies","coach"],
+  ["Only when it isn't safe","protector"],
+  ["Rarely. I can't bear to see them upset","friend"]]],
+ ["They come home upset after a fight with a friend.",[
+  ["Ask questions, and let them decide what to do","guide"],
+  ["Tell them which friends to stay away from","commander"],
+  ["Tell them to focus on their own work","coach"],
+  ["Distract them — it'll pass by tomorrow","friend"]]],
+ ["More than anything at this age, you want them to be…",[
+  ["Honest, and able to think for themselves","guide"],
+  ["Obedient and disciplined","commander"],
+  ["Safe and close to the family","protector"],
+  ["Among the top in the class","coach"]]]
+],
+c:[
+ ["Marks drop sharply in the term exam.",[
+  ["Sit down and ask what's been going on","guide"],
+  ["The phone goes, and the rules tighten today","commander"],
+  ["Add tuition and a stricter timetable","coach"],
+  ["Tell them not to worry about it","friend"]]],
+ ["Your twelve-year-old wants a phone because everyone in class has one.",[
+  ["Yes, with rules we agree together","guide"],
+  ["No. Not at this age","commander"],
+  ["Only a basic phone, and I check it","protector"],
+  ["Yes — I don't want them left out","friend"]]],
+ ["Your child says, “You never listen to me.”",[
+  ["Stop and ask them what they mean","guide"],
+  ["Tell them not to talk back","commander"],
+  ["Feel hurt — everything I do is for them","protector"],
+  ["List everything I've arranged for their future","coach"]]],
+ ["They want to drop a class they've attended for three years.",[
+  ["Ask why, and decide together","guide"],
+  ["They finish what they started","commander"],
+  ["Push them on — they're almost at the next level","coach"],
+  ["Fine, if they're not enjoying it","friend"]]],
+ ["You find out they got hurt at school and didn't tell you.",[
+  ["Call the school immediately","protector"],
+  ["Ask why they hid it from me","commander"],
+  ["Tell them not to let it affect their studies","coach"],
+  ["Let it go — they handled it","friend"]]],
+ ["Screen time on a school day is…",[
+  ["An agreed limit, revisited when they're reasonable","guide"],
+  ["Only after studies and practice are done","coach"],
+  ["One hour, decided by me","commander"],
+  ["Honestly, I've stopped counting","friend"]]],
+ ["They talk about a career you think is unsafe.",[
+  ["Explore it seriously, and discuss a backup","guide"],
+  ["That's not an option in this family","commander"],
+  ["Worry about how they'll ever be secure","protector"],
+  ["Support it fully, whatever makes them happy","friend"]]],
+ ["A relative comments on your child's weight or looks.",[
+  ["Tell them to stop, and check in with my child after","guide"],
+  ["They should hear it — it'll push them","commander"],
+  ["It upsets me for days","protector"],
+  ["Use it as motivation for the child","coach"]]],
+ ["You find they lied about finishing their homework.",[
+  ["Talk about why they felt they had to lie","guide"],
+  ["Wonder what pressure made them do it","protector"],
+  ["They lose a privilege until trust is rebuilt","coach"],
+  ["Everyone lies a bit at that age","friend"]]],
+ ["Pocket money in your house is…",[
+  ["Given only when I decide","commander"],
+  ["Tied to marks or performance","coach"],
+  ["I'd rather buy what they need myself","protector"],
+  ["Given whenever they ask","friend"]]],
+ ["They're being left out of a group at school.",[
+  ["Listen, and help them think through what to do","guide"],
+  ["Tell them to ignore it and focus","commander"],
+  ["Suggest something else where they'll shine","coach"],
+  ["Say it doesn't matter — they have us","friend"]]],
+ ["More than anything at this age, you want them to be…",[
+  ["Able to think for themselves, and tell me the truth","guide"],
+  ["Respectful and disciplined","commander"],
+  ["Safe, especially online","protector"],
+  ["Ready for the board years ahead","coach"]]]
+],
+d:[
+ ["Board exam marks come in lower than expected.",[
+  ["Sit down and work out what happens next, together","guide"],
+  ["Tighten everything until the next attempt","commander"],
+  ["More coaching, more hours","coach"],
+  ["Tell them marks aren't everything","friend"]]],
+ ["They want to go to a friend's party that ends at 10 pm.",[
+  ["Yes, if I know the family and they call me when leaving","guide"],
+  ["No. That's far too late","commander"],
+  ["Only if I drop and pick them up myself","protector"],
+  ["Yes, they'll manage","friend"]]],
+ ["They shut the door and say they want to be left alone.",[
+  ["Give them space, and come back later to talk","guide"],
+  ["Tell them that's not how we behave in this house","commander"],
+  ["Worry about what's wrong all evening","protector"],
+  ["Remind them there's no time for moods this year","coach"]]],
+ ["Choosing a stream, or a college course.",[
+  ["Their choice, with an honest talk about what it means","guide"],
+  ["Whatever gives the best placement and salary","coach"],
+  ["Something near home","protector"],
+  ["We've already decided","commander"]]],
+ ["You suspect they're in a relationship.",[
+  ["Find a way to talk about it without accusing","guide"],
+  ["Confront them and put a stop to it","commander"],
+  ["Watch their phone and their friends more closely","protector"],
+  ["They'll tell me when they're ready","friend"]]],
+ ["Their phone at night is…",[
+  ["Out of the bedroom — a rule we agreed","guide"],
+  ["Allowed only after study hours","coach"],
+  ["Taken by me at ten","commander"],
+  ["With them. I don't interfere","friend"]]],
+ ["They want a career in art, sport or something unconventional.",[
+  ["Explore it seriously together, with a backup","guide"],
+  ["Not an option in this family","commander"],
+  ["Worry constantly about their security","protector"],
+  ["Support it fully, whatever makes them happy","friend"]]],
+ ["A relative asks what they scored, in front of everyone.",[
+  ["Change the subject, and talk to my child later","guide"],
+  ["Answer honestly — they should feel the pressure","commander"],
+  ["Feel it more than my child does","protector"],
+  ["Answer proudly if it's good, quietly if it isn't","coach"]]],
+ ["They break a rule the two of you had agreed on.",[
+  ["Talk about what happened, and what changes now","guide"],
+  ["Blame myself for not watching closely enough","protector"],
+  ["They lose a freedom until they earn it back","coach"],
+  ["Let it go — they're growing up","friend"]]],
+ ["They ask for money for something you think is a waste.",[
+  ["No, and no discussion","commander"],
+  ["Only if the results have been good","coach"],
+  ["Only if I know exactly where they're going","protector"],
+  ["I usually give in","friend"]]],
+ ["They tell you a friend is going through something serious.",[
+  ["Ask how they're coping, and offer to help","guide"],
+  ["Tell them to keep their distance","commander"],
+  ["Tell them not to let it affect their year","coach"],
+  ["Say they're a good friend, and leave it there","friend"]]],
+ ["More than anything now, you want them to be…",[
+  ["Independent, and honest with me","guide"],
+  ["Respectful and disciplined","commander"],
+  ["Safe, wherever they go","protector"],
+  ["Settled in a good career","coach"]]]
+]};
+
+const STYLES = {
+  guide:{name:"The Guide",colour:"var(--teal)",warmth:85,structure:75,
+   line:"Warm, but with clear limits. You explain the reason behind the rule.",
+   good:["You give reasons instead of orders, so your child learns to think, not just obey.",
+         "You can hold a limit without withdrawing affection.",
+         "Your child is likely to bring you bad news early, which is the real test of trust."],
+   watch:["Explaining takes patience you don't always have — on bad days you may swing to shouting, then feel guilty.",
+          "You may over-negotiate small things until the child argues about everything."],
+   todo:["Pick two rules that are simply not up for discussion this week. Say them once, plainly.",
+         "When you lose your temper, name it aloud afterwards: “I shouted. That was mine, not yours.”"],
+   age:{a:["Give a two-option choice at least once a day — red shirt or blue, apple or banana.",
+           "If I fall, Amma stays calm — so maybe it isn't so bad."],
+        b:["Let them handle one school problem this week without you emailing the teacher.",
+           "I can tell Amma about the low mark before she finds out."],
+        c:["Agree the screen rule with them instead of announcing it.",
+           "Amma will be annoyed, but she'll still listen."],
+        d:["Ask their opinion on a family decision that actually affects the family.",
+           "I can tell my parents the truth and they won't fall apart."]}},
+
+  commander:{name:"The Commander",colour:"var(--indigo)",warmth:40,structure:92,
+   line:"Respect, discipline and order first. The rules are the rules.",
+   good:["Your home has structure, and children genuinely feel safer with predictable limits.",
+         "You follow through on what you say, so your word carries weight.",
+         "You aren't swayed by every trend or by what other parents are doing."],
+   watch:["Obedience at home can become silence — your child may stop telling you things rather than risk the reaction.",
+          "Rules that are never explained get followed only while you're watching."],
+   todo:["Take one existing rule and explain the reason behind it, once, without arguing.",
+         "For three days, notice how often you say no before you've heard the whole request."],
+   age:{a:["Say yes to one small mess this week — water play, eating with hands.",
+           "If I cry, it only gets worse."],
+        b:["Let them win one small decision that doesn't matter to you.",
+           "Better not tell Appa about the test."],
+        c:["Let them choose one thing you'd normally decide — clothes, the weekend plan.",
+           "There's no point explaining. He's already decided."],
+        d:["Ask what they think about their own future before telling them.",
+           "I'll do what they want at home, and my own thing outside."]}},
+
+  protector:{name:"The Protector",colour:"var(--rose)",warmth:88,structure:55,
+   line:"Deeply loving, always one step ahead of the risk.",
+   good:["Your child never doubts that someone is on their side.",
+         "You notice things early — a mood change, a problem at school — that other parents miss.",
+         "You put in real effort, daily, and it is not invisible."],
+   watch:["A child who is never allowed to fail doesn't learn that failure is survivable.",
+          "Your worry becomes their worry. Anxious parents often raise anxious children without meaning to."],
+   todo:["Let one small thing go wrong this week without stepping in.",
+         "When you feel the urge to fix it, wait sixty seconds first. Often they solve it."],
+   age:{a:["Stand three steps back at the park for ten minutes. Just watch.",
+           "I can't do it unless Amma is holding me."],
+        b:["Let them pack their own school bag — and let them forget something.",
+           "Amma will sort it out. I don't have to."],
+        c:["Let them travel one familiar route without you.",
+           "If I tell her, she'll panic and make it bigger."],
+        d:["Say yes to one outing you'd normally refuse, with a call-when-you-leave rule.",
+           "It's easier to hide things than to watch her worry."]}},
+
+  friend:{name:"The Friend",colour:"var(--marigold)",warmth:90,structure:22,
+   line:"Close, easy-going, allergic to conflict at home.",
+   good:["Your child talks to you about things many children hide from their parents.",
+         "Home is a soft place to land, which matters enormously in the teenage years.",
+         "You don't rule through fear, and your child knows it."],
+   watch:["Without limits, children keep testing to find where the edge is — and the testing gets louder.",
+          "Being the friend can leave nobody in the room doing the harder job of being the parent."],
+   todo:["Practise saying no once without adding a reason or an apology.",
+         "Notice whether you say yes because you agree, or because you don't want the argument."],
+   age:{a:["Hold one bedtime, at the same time, every night this week.",
+           "If I cry long enough, I get it."],
+        b:["Pick one non-negotiable — no screens at the table — and hold it calmly, daily.",
+           "Amma says no, but she doesn't mean it."],
+        c:["Set one consequence in advance, and use it the first time it's needed.",
+           "Nothing really happens if I don't listen."],
+        d:["Agree one consequence together, and follow through when it happens.",
+           "My parents are great, but nobody is actually in charge."]}},
+
+  coach:{name:"The Coach",colour:"var(--indigo)",warmth:55,structure:85,
+   line:"Ambitious for your child. You want them prepared, and ahead.",
+   good:["You invest serious time and money in your child's future, and that is real love.",
+         "You teach effort and consistency, which outlast talent.",
+         "Your child learns that hard things are worth doing."],
+   watch:["When praise arrives only with results, children start to believe love is conditional on performance.",
+          "Achievement-focused homes report the highest exam-season anxiety — children hide low marks rather than ask for help."],
+   todo:["Praise one thing this week that has nothing to do with performance.",
+         "Ask about their day before you ask about the test."],
+   age:{a:["Spend twenty minutes on play with no learning goal attached.",
+           "Amma is happy when I finish the worksheet."],
+        b:["Let one weekend pass with no worksheets at all.",
+           "They're proud of my rank, not of me."],
+        c:["Ask what they enjoyed today before you ask what they scored.",
+           "If I come second, the evening is ruined."],
+        d:["Say once, out loud: “If it doesn't work out, we'll deal with it together.”",
+           "Will they still be proud of me if I don't get in?"]}}
+};
+
+const SAMPLE = {a:{protector:31,friend:24,guide:22,coach:13,commander:10},
+                b:{protector:26,coach:24,guide:23,commander:15,friend:12},
+                c:{coach:28,protector:25,commander:20,guide:19,friend:8},
+                d:{coach:27,guide:24,commander:22,protector:19,friend:8}};
+
+let band = null, Q = [], i = 0, answers = [];
+const $ = id => document.getElementById(id);
+
+try{
+  const p = localStorage.getItem('pc_style_last');
+  if(p){ const d = JSON.parse(p);
+    $('prevWrap').innerHTML = '<div class="prev">Last time you took this, you were <b>'+STYLES[d.k].name+'</b> ('+d.d+'). Taking it again shows what has shifted.</div>';
+  }
+}catch(e){}
+
+$('start').onclick = () => { $('intro').classList.add('hidden'); $('gate').classList.remove('hidden'); $('tag').textContent='Step 1 of 2'; drawGate(); };
+$('back').onclick = () => { if(i>0){ i--; render(); } else { $('quiz').classList.add('hidden'); $('gate').classList.remove('hidden'); $('tag').textContent='Step 1 of 2'; } };
+
+function drawGate(){
+  $('ages').innerHTML = BANDS.map(b=>'<button class="age" data-k="'+b.k+'"><b>'+b.label+'</b><span>'+b.sub+'</span></button>').join('');
+  $('ages').querySelectorAll('.age').forEach(el=>{
+    el.onclick = () => {
+      band = el.dataset.k; Q = BANK[band]; answers = new Array(Q.length).fill(null); i = 0;
+      $('gate').classList.add('hidden'); $('quiz').classList.remove('hidden'); render();
+    };
+  });
+}
+
+function render(){
+  $('prog').innerHTML = Q.map((_,n)=>'<i class="'+(n<=i?'on':'')+'"></i>').join('');
+  const lbl = BANDS.find(b=>b.k===band).label;
+  $('qnum').textContent = 'Question '+(i+1)+' of '+Q.length+' · age '+lbl;
+  $('tag').textContent = 'Question '+(i+1)+' of '+Q.length;
+  $('qtext').textContent = Q[i][0];
+  $('opts').innerHTML = Q[i][1].map((o,n)=>
+    '<button class="opt '+(answers[i]===n?'sel':'')+'" data-n="'+n+'"><span class="key"></span><span>'+o[0]+'</span></button>').join('');
+  $('opts').querySelectorAll('.opt').forEach(b=>{
+    b.onclick = () => { answers[i]=+b.dataset.n; b.classList.add('sel');
+      setTimeout(()=>{ i<Q.length-1 ? (i++, render()) : finish(); },160); };
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function finish(){
+  const score = {guide:0,commander:0,protector:0,friend:0,coach:0};
+  answers.forEach((a,n)=>{ if(a!==null) score[Q[n][1][a][1]]++; });
+  const ranked = Object.entries(score).sort((a,b)=> b[1]-a[1] || STYLES[b[0]].warmth-STYLES[a[0]].warmth);
+  const k1 = ranked[0][0], k2 = ranked[1][0];
+  const s = STYLES[k1], s2 = STYLES[k2];
+  const total = answers.length;
+  const lbl = BANDS.find(b=>b.k===band).label;
+
+  let w=0, st=0;
+  for(const k in score){ w += STYLES[k].warmth*score[k]; st += STYLES[k].structure*score[k]; }
+  w/=total; st/=total;
+  const x = 8 + (w/100)*84, y = (92 - (st/100)*84)*.86 + 3;
+
+  try{ localStorage.setItem('pc_style_last', JSON.stringify({k:k1, band:band,
+    d:new Date().toLocaleDateString('en-IN',{month:'short',year:'numeric'})})); }catch(e){}
+
+  const dist = Object.entries(SAMPLE[band]).sort((a,b)=>b[1]-a[1]).map(([k,v])=>
+    '<div class="drow '+(k===k1?'me':'')+'"><span>'+STYLES[k].name.replace('The ','')+'</span><span class="bar"><span style="width:'+(v*3.2)+'%"></span></span><span>'+v+'%</span></div>').join('');
+
+  const li = (t,cls,mark,tag) => '<li class="'+cls+'"><span class="tick">'+mark+'</span><span>'+t+(tag?'<span class="agetag">for ages '+lbl+'</span>':'')+'</span></li>';
+  const todos = s.todo.map(t=>li(t,'todo','→')).join('') + li(s.age[band][0],'todo','→',true);
+
+  $('quiz').classList.add('hidden'); $('tag').textContent='Your result';
+  const r = $('result'); r.classList.remove('hidden');
+  r.innerHTML =
+   '<span class="badge" style="background:'+s.colour+'">Parent of a child aged '+lbl+'</span>'+
+   '<h2 class="styleName">'+s.name+'</h2>'+
+   '<p class="styleLine">'+s.line+'</p>'+
+   '<p class="secondary">With a strong streak of <b>'+s2.name.replace('The ','the ')+'</b> — that mix is what makes your parenting yours.</p>'+
+   '<div class="mapcard"><h3>Where you sit</h3><div class="grid">'+
+   '<svg viewBox="0 0 100 82" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Your position on the warmth and structure map">'+
+   '<line x1="50" y1="6" x2="50" y2="76" stroke="var(--line)" stroke-width=".4"/>'+
+   '<line x1="8" y1="41" x2="92" y2="41" stroke="var(--line)" stroke-width=".4"/>'+
+   '<text class="zone" x="28" y="16" text-anchor="middle">strict</text>'+
+   '<text class="zone" x="72" y="16" text-anchor="middle">firm and warm</text>'+
+   '<text class="zone" x="28" y="70" text-anchor="middle">distant</text>'+
+   '<text class="zone" x="72" y="70" text-anchor="middle">indulgent</text>'+
+   '<text class="axl" x="50" y="81" text-anchor="middle">warmth →</text>'+
+   '<text class="axl" x="4" y="41" text-anchor="middle" transform="rotate(-90 4 41)">structure →</text>'+
+   '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="4.6" fill="'+s.colour+'" opacity=".25"/>'+
+   '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="2.3" fill="'+s.colour+'"/></svg></div></div>'+
+   '<div class="sec"><h3>What you’re doing well</h3><ul>'+s.good.map(t=>li(t,'good','✓')).join('')+'</ul></div>'+
+   '<div class="sec"><h3>Your blind spot</h3><ul>'+s.watch.map(t=>li(t,'watch','!')).join('')+'</ul></div>'+
+   '<p class="feel">A child of '+lbl+' with this kind of parent often thinks: “'+s.age[band][1]+'”</p>'+
+   '<div class="sec"><h3>Three things to try this week</h3><ul>'+todos+'</ul></div>'+
+   '<div class="mapcard"><h3>Other parents of children aged '+lbl+'</h3><div class="dist">'+dist+'</div>'+
+   '<p style="font-size:.8rem;color:var(--ink-soft);margin:14px 0 0">Sample figures for this prototype. In the live version this updates from real submissions, by age band.</p></div>'+
+   '<div class="hooks">'+
+   '<button class="btn small" id="share">Send to your partner</button>'+
+   '<button class="btn small ghost" id="other">Take it for another child</button>'+
+   '<button class="btn small ghost" id="join">Join the '+s.name.replace('The ','')+' discussion</button></div>'+
+   '<p class="note">This is a reflection tool, not a psychological assessment. No style here is the right one — most parents move between two or three depending on the day, the child, and how much sleep they have had. It works better as the start of a conversation than as a verdict.</p>';
+
+  $('share').onclick = () => {
+    const t = 'I took ParentCircle’s parenting style quiz for our '+lbl+' year old — I’m '+s.name+'. Take it and let’s compare: ';
+    window.open('https://wa.me/?text='+encodeURIComponent(t+location.href),'_blank');
+  };
+  $('other').onclick = () => { r.classList.add('hidden'); $('gate').classList.remove('hidden'); $('tag').textContent='Step 1 of 2'; drawGate(); window.scrollTo({top:0}); };
+  $('join').onclick = () => alert('In the live version this joins the "'+s.name+'" thread for parents of children aged '+lbl+'.');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
