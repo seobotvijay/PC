@@ -140,6 +140,46 @@
 
   initPoll();
 
+  // ---- Today's Parenting Quote & Tip ----
+  var QUOTES = [
+    { text: 'Children are not things to be molded, but people to be unfolded.', by: 'Jess Lair' },
+    { text: 'The way we talk to our children becomes their inner voice.', by: 'Peggy O’Mara' },
+    { text: 'There is no such thing as a perfect parent. So just be a real one.', by: 'Sue Atkins' },
+    { text: 'The days are long, but the years are short.', by: 'Gretchen Rubin' },
+    { text: 'A child seldom needs a good talking to as much as a good listening to.', by: 'Robert Brault' },
+    { text: 'Behind every young child who believes in himself is a parent who believed first.', by: 'Matthew L. Jacobson' },
+    { text: 'Parenting is not about perfection. It’s about connection.', by: 'Unknown' }
+  ];
+
+  var TIPS = [
+    { title: 'Give two real choices', body: 'Toddlers push back less when they get to choose between two options you’re both fine with — red cup or blue cup, now or in five minutes.' },
+    { title: 'Twenty minutes, then a break', body: 'Concentration for primary-age children runs out fast. A short movement break restores focus better than pushing through.' },
+    { title: 'Ask about their day before the test', body: 'Pre-teens pick up on a parent’s worry about marks quickly. Lead with curiosity about their day, not the score.' },
+    { title: 'Say no once, calmly', body: 'Repeating the same calm word beats a longer explanation when a toddler is mid-meltdown. Save the explaining for later, once everyone’s calm.' },
+    { title: 'Sit near, not over', body: 'During homework, being in the room helps more than checking every answer — it keeps the work theirs.' },
+    { title: 'Catch them being good', body: 'Praise that lands on effort, not just results, teaches a child that trying hard matters as much as getting it right.' },
+    { title: 'Talk side-by-side', body: 'Teens open up more easily in a car or on a walk than face-to-face across a table. Use the drive.' }
+  ];
+
+  function initToday() {
+    var quoteText = document.getElementById('quoteText');
+    var quoteAuthor = document.getElementById('quoteAuthor');
+    var tipTitle = document.getElementById('tipTitle');
+    var tipBody = document.getElementById('tipBody');
+    if (!quoteText || !tipTitle) return;
+
+    var i = dayIndex();
+    var quote = QUOTES[i % QUOTES.length];
+    var tip = TIPS[i % TIPS.length];
+
+    quoteText.textContent = '“' + quote.text + '”';
+    quoteAuthor.textContent = '— ' + quote.by;
+    tipTitle.textContent = tip.title;
+    tipBody.textContent = tip.body;
+  }
+
+  initToday();
+
   // ---- Newsletter form (client-side only, no backend configured) ----
   var form = document.getElementById('newsletterForm');
   if (form) {
