@@ -55,12 +55,19 @@
           <div><b>0&ndash;18</b><span>every age, covered</span></div>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <span class="blob b1"></span>
-        <span class="blob b2"></span>
-        <div class="card-stack">
-          <div class="mini-card"><b>Today&rsquo;s Parenting Quote</b><span>A little encouragement, every day</span></div>
-          <div class="mini-card"><b>Today&rsquo;s Parenting Tips</b><span>One practical idea to try today</span></div>
+      <div class="hero-today" id="today">
+        <p class="eyebrow">Today on ParentCircle</p>
+        <div class="today-card">
+          <span class="today-label">Today&rsquo;s Parenting Quote</span>
+          <blockquote id="quoteText">Loading today&rsquo;s quote&hellip;</blockquote>
+          <span class="today-attr" id="quoteAuthor"></span>
+          <a class="btn small ghost" href="https://www.parentcircle.com/inspirational-motivational-parenting-quotes-for-dads-moms/community-discussion?utm_source=PC&amp;utm_medium=referral&amp;utm_campaign=ParentingQuotes-HPRoundedIcon" target="_blank" rel="noopener">More inspiring quotes</a>
+        </div>
+        <div class="today-card">
+          <span class="today-label">Today&rsquo;s Parenting Tip</span>
+          <h3 id="tipTitle">Loading today&rsquo;s tip&hellip;</h3>
+          <p id="tipBody"></p>
+          <a class="btn small ghost" href="https://www.parentcircle.com/parenting-tips-guides-ideas-for-parents/articles" target="_blank" rel="noopener">More parenting tips</a>
         </div>
       </div>
     </div>
@@ -173,33 +180,6 @@
         <h3 class="poll-question" id="pollQuestion">Loading today&rsquo;s question&hellip;</h3>
         <div class="poll-opts" id="pollOpts"></div>
         <p class="poll-footnote" id="pollFootnote"></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Today's Parenting Quote & Tip -->
-  <section id="today">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Today on ParentCircle</p>
-        <h2>Your daily parenting quote and tip</h2>
-        <p>A short dose of encouragement and one practical idea &mdash; new every day.</p>
-      </div>
-
-      <div class="today-grid">
-        <div class="today-card">
-          <span class="today-label">Today&rsquo;s Parenting Quote</span>
-          <blockquote id="quoteText">Loading today&rsquo;s quote&hellip;</blockquote>
-          <span class="today-attr" id="quoteAuthor"></span>
-          <a class="btn small ghost" href="https://www.parentcircle.com/inspirational-motivational-parenting-quotes-for-dads-moms/community-discussion?utm_source=PC&amp;utm_medium=referral&amp;utm_campaign=ParentingQuotes-HPRoundedIcon" target="_blank" rel="noopener">More inspiring quotes</a>
-        </div>
-
-        <div class="today-card">
-          <span class="today-label">Today&rsquo;s Parenting Tip</span>
-          <h3 id="tipTitle">Loading today&rsquo;s tip&hellip;</h3>
-          <p id="tipBody"></p>
-          <a class="btn small ghost" href="https://www.parentcircle.com/parenting-tips-guides-ideas-for-parents/articles" target="_blank" rel="noopener">More parenting tips</a>
-        </div>
       </div>
     </div>
   </section>
