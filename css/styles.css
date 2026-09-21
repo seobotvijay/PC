@@ -183,8 +183,9 @@ section{padding:56px 0}
 .chip-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:18px}
 @media (max-width:920px){.chip-grid{grid-template-columns:repeat(2, 1fr)}}
 @media (max-width:520px){.chip-grid{grid-template-columns:1fr}}
-.cat-card{background:var(--card); border:1.5px solid var(--line); border-radius:18px; padding:22px; text-decoration:none; display:block; transition:border-color .12s ease, transform .12s ease}
+.cat-card{background:var(--card); border:1.5px solid var(--line); border-radius:18px; padding:22px; text-decoration:none; display:block; transition:border-color .12s ease, transform .12s ease, box-shadow .12s ease; scroll-margin-top:90px}
 .cat-card:hover{border-color:var(--indigo); transform:translateY(-2px)}
+.cat-card:target{border-color:var(--indigo); box-shadow:0 0 0 3px color-mix(in srgb, var(--indigo) 22%, transparent)}
 .cat-card .dot{width:10px; height:10px; border-radius:50%; margin-bottom:14px}
 .cat-card h4{font-family:'Newsreader', Georgia, serif; font-weight:500; font-size:1.15rem; margin:0 0 6px}
 .cat-card p{font-size:.85rem; color:var(--ink-soft); margin:0}
@@ -196,6 +197,26 @@ section{padding:56px 0}
 }
 .age-pill b{display:block; font-family:'Newsreader', Georgia, serif; font-size:1.3rem; margin-bottom:4px}
 .age-pill span{font-size:.82rem; color:var(--ink-soft)}
+
+/* Explore by age & author, side by side */
+.explore-split{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start}
+.explore-split > div{min-width:0}
+@media (max-width:900px){.explore-split{grid-template-columns:1fr; gap:40px}}
+#authors{scroll-margin-top:90px}
+
+.author-row{display:flex; gap:14px; overflow-x:auto; padding-bottom:8px; scrollbar-width:thin}
+.author-pill{
+  flex:none; min-width:150px; background:var(--card); border:1.5px solid var(--line); border-radius:16px;
+  padding:16px 18px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:9px;
+  transition:border-color .12s ease, transform .12s ease;
+}
+.author-pill:hover{border-color:var(--indigo); transform:translateY(-2px)}
+.author-avatar{
+  width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:#fff;
+  font-family:'Newsreader', Georgia, serif; font-weight:600; font-size:.95rem;
+}
+.author-name{font-family:'Newsreader', Georgia, serif; font-weight:500; font-size:1.02rem}
+.author-role{font-size:.8rem; color:var(--ink-soft)}
 
 /* Trust band */
 .trust{background:var(--ink); color:var(--paper)}
