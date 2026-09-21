@@ -198,13 +198,10 @@ section{padding:56px 0}
 .age-pill b{display:block; font-family:'Newsreader', Georgia, serif; font-size:1.3rem; margin-bottom:4px}
 .age-pill span{font-size:.82rem; color:var(--ink-soft)}
 
-/* Explore by age & author, side by side */
-.explore-split{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start}
-.explore-split > div{min-width:0}
-@media (max-width:900px){.explore-split{grid-template-columns:1fr; gap:40px}}
-#authors{scroll-margin-top:90px}
+/* Browse by author, at the bottom of the age section */
+.authors-block{margin-top:40px; padding-top:36px; border-top:1px solid var(--line); scroll-margin-top:90px}
 
-.author-row{display:flex; gap:14px; overflow-x:auto; padding-bottom:8px; scrollbar-width:thin}
+.author-row{display:flex; flex-wrap:wrap; gap:14px}
 .author-pill{
   flex:none; min-width:150px; background:var(--card); border:1.5px solid var(--line); border-radius:16px;
   padding:16px 18px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:9px;
