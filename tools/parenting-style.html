@@ -5,14 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Know Your Parenting Style | ParentCircle</title>
 <meta name="description" content="A 90-second reflection: twelve everyday situations from Indian homes, written for the age your child is right now.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="ParentCircle">
+<link rel="canonical" href="https://www.parentcircle-demo.example.com/tools/parenting-style.html">
 <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ParentCircle">
+<meta property="og:title" content="Know Your Parenting Style | ParentCircle">
+<meta property="og:description" content="A 90-second reflection: twelve everyday situations from Indian homes, written for the age your child is right now.">
+<meta property="og:url" content="https://www.parentcircle-demo.example.com/tools/parenting-style.html">
+<meta property="og:image" content="https://www.parentcircle-demo.example.com/assets/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Know Your Parenting Style | ParentCircle">
+<meta name="twitter:description" content="A 90-second reflection: twelve everyday situations from Indian homes, written for the age your child is right now.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.parentcircle-demo.example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.parentcircle-demo.example.com/#features" },
+        { "@type": "ListItem", "position": 3, "name": "Know Your Parenting Style" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Know Your Parenting Style",
+      "url": "https://www.parentcircle-demo.example.com/tools/parenting-style.html",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Any browser",
+      "description": "A free 90-second parenting-style reflection quiz, with questions written for your child's exact age band.",
+      "isAccessibleForFree": true,
+      "publisher": { "@type": "Organization", "name": "ParentCircle" }
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --paper:#F1EFF7; --card:#FFFFFF; --ink:#211D33; --ink-soft:#5A5470;
     --line:#D9D4E6; --marigold:#E29612; --rose:#B94674; --teal:#22796A; --indigo:#4B3F8F;
+    --max:1180px;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -28,18 +70,8 @@
   html,body{margin:0;padding:0}
   body{background:var(--paper);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
   a{color:inherit}
-  .sitebar{border-bottom:1px solid var(--line);background:var(--card)}
-  .sitebar-row{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
-  .sitebar a.home{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--ink)}
-  .sitebar a.home .dot{width:8px;height:8px;border-radius:50%;background:var(--marigold)}
-  .sitebar a.home:hover{color:var(--indigo)}
-  .sitebar .crumb{font-size:.85rem;color:var(--ink-soft)}
-  .crumb-group{display:flex;align-items:center;gap:16px}
-  .crumb-link{font-size:.85rem;font-weight:600;color:var(--indigo);text-decoration:none}
-  .crumb-link:hover{text-decoration:underline}
-  @media (max-width:480px){.sitebar .crumb{display:none}}
   .wrap{max-width:640px;margin:0 auto;padding:28px 20px 64px}
-  .brandline{font-size:.78rem;color:var(--ink-soft);display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+  .brandline{font-size:.78rem;color:var(--ink-soft);display:flex;justify-content:flex-end;align-items:center;margin-bottom:20px}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--marigold);display:inline-block;margin-right:7px;vertical-align:1px}
   h1{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(2.1rem,7vw,3.1rem);line-height:1.08;margin:0 0 16px;letter-spacing:-.01em}
   h1 em{font-style:italic}
@@ -117,17 +149,37 @@
 </style>
 </head>
 <body>
-<div class="sitebar">
-  <div class="sitebar-row">
-    <a class="home" href="../index.html"><span class="dot"></span>ParentCircle</a>
-    <span class="crumb-group">
-      <span class="crumb">Tools &rsaquo; Know Your Parenting Style</span>
-      <a class="crumb-link" href="../membership.html">Membership</a>
-    </span>
+<header class="site-header">
+  <div class="container header-row">
+    <a class="logo" href="../index.html" aria-label="ParentCircle home">
+      <img src="../assets/logo.svg" alt="ParentCircle">
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="../parenting.html">Parenting</a>
+      <a href="../learning.html">Learning</a>
+      <a href="../wellness.html">Wellness</a>
+      <a href="../lifestyle.html">Lifestyle</a>
+      <a href="../index.html#features">Tools</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn ghost small" href="../membership.html">Membership</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="breadcrumb-bar">
+  <div class="container">
+    <nav aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#features">Tools</a><span class="sep">/</span><span class="current">Know Your Parenting Style</span>
+    </nav>
   </div>
 </div>
 <div class="wrap">
-  <div class="brandline"><span><span class="dot"></span>ParentCircle</span><span id="tag">A 90-second reflection</span></div>
+  <div class="brandline"><span id="tag">A 90-second reflection</span></div>
 
   <section id="intro">
     <h1>Know your <em>parenting style</em></h1>
@@ -158,6 +210,59 @@
   <section id="result" class="hidden"></section>
 </div>
 
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo.svg" alt="ParentCircle" height="24">
+        <p>A parenting companion for the whole journey &mdash; from your child&rsquo;s first year to their last year at home.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="ParentCircle on Facebook">f</a>
+          <a href="#" aria-label="ParentCircle on Instagram">ig</a>
+          <a href="#" aria-label="ParentCircle on YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="../parenting.html">Parenting</a></li>
+          <li><a href="../learning.html">Learning</a></li>
+          <li><a href="../wellness.html">Wellness</a></li>
+          <li><a href="../lifestyle.html">Lifestyle</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="../index.html#poll">Poll of the Day</a></li>
+          <li><a href="../tools/parenting-style.html">Know Your Parenting Style</a></li>
+          <li><a href="../tools/parenting-tips.html">Get Your Parenting Tips</a></li>
+          <li><a href="https://www.parentcircle.com/ask-the-expert/faqs?utm_source=PC&amp;utm_medium=referral&amp;utm_campaign=FAQs-HPRoundedIcon" target="_blank" rel="noopener">Ask the Experts</a></li>
+          <li><a href="https://www.parentcircle.com/communities" target="_blank" rel="noopener">Parents Community</a></li>
+          <li><a href="../index.html#today">Today&rsquo;s Quote &amp; Tip</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>ParentCircle</h5>
+        <ul>
+          <li><a href="../index.html#why">Why ParentCircle</a></li>
+          <li><a href="../index.html#about">What is ParentCircle</a></li>
+          <li><a href="../index.html#featured">Featured Articles</a></li>
+          <li><a href="../index.html#authors">Browse by Author</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../membership.html">Membership</a></li>
+          <li><a href="#">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> ParentCircle. All rights reserved.</span>
+      <span>Made for parents, by parents.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
 <script>
 const BANDS = [
   {k:'a', label:'2 to 5', sub:'Toddler and pre-school'},

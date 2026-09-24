@@ -6,17 +6,47 @@
 <title>ParentCircle Membership &mdash; Plans for Every Stage</title>
 <meta name="description" content="Pick your child's stage and see ParentCircle's Free, Plus and Pro membership plans &mdash; articles, community, expert answers and a parenting chatbot for your stage.">
 <meta name="robots" content="index, follow">
+<meta name="author" content="ParentCircle">
 <link rel="canonical" href="https://www.parentcircle-demo.example.com/membership.html">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ParentCircle">
+<meta property="og:title" content="ParentCircle Membership &mdash; Plans for Every Stage">
+<meta property="og:description" content="Pick your child's stage and see ParentCircle's Free, Plus and Pro membership plans.">
+<meta property="og:url" content="https://www.parentcircle-demo.example.com/membership.html">
+<meta property="og:image" content="https://www.parentcircle-demo.example.com/assets/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ParentCircle Membership &mdash; Plans for Every Stage">
+<meta name="twitter:description" content="Pick your child's stage and see ParentCircle's Free, Plus and Pro membership plans.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.parentcircle-demo.example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Membership" }
+      ]
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --ink:#191B26; --muted:#5F6377; --faint:#8A8E9E;
   --paper:#FFFFFF; --surface:#F3F2EF; --line:#E4E2DC; --line-soft:#EDEBE6;
   --accent:#E8A33D; --accent-ink:#191B26;
   --shadow:0 1px 2px rgba(25,27,38,.06);
+  /* aliases so the shared site header/breadcrumb/footer (css/styles.css) match this page's palette */
+  --card:#FFFFFF; --ink-soft:#5F6377; --marigold:#E8A33D; --rose:#B94674; --teal:#22796A; --indigo:#4B3F8F; --max:1180px;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -24,6 +54,7 @@
     --paper:#14151C; --surface:#1B1D26; --line:#2C2F3C; --line-soft:#23262F;
     --accent-ink:#14151C;
     --shadow:0 1px 2px rgba(0,0,0,.4);
+    --card:#1F1B2C; --ink-soft:#A0A4B6; --marigold:#F0B44A; --rose:#E0799F; --teal:#5FBBA8; --indigo:#9F91E8;
   }
 }
 :root[data-theme="dark"]{
@@ -31,6 +62,7 @@
   --paper:#14151C; --surface:#1B1D26; --line:#2C2F3C; --line-soft:#23262F;
   --accent-ink:#14151C;
   --shadow:0 1px 2px rgba(0,0,0,.4);
+  --card:#1F1B2C; --ink-soft:#A0A4B6; --marigold:#F0B44A; --rose:#E0799F; --teal:#5FBBA8; --indigo:#9F91E8;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -42,22 +74,6 @@ body{
 a{color:inherit}
 .wrap{max-width:1060px; margin:0 auto; padding:0 24px}
 h1,h2,h3,.num{font-family:"Bricolage Grotesque","Instrument Sans",sans-serif; font-weight:800; letter-spacing:-.02em; line-height:1.1; margin:0}
-
-/* site bar (links back to the main ParentCircle site) */
-.sitebar{border-bottom:1px solid var(--line-soft); background:var(--surface)}
-.sitebar-row{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-.sitebar a.home{display:flex; align-items:center; gap:8px; text-decoration:none; font-weight:600; font-size:13.5px; color:var(--ink)}
-.sitebar a.home .dot{width:7px; height:7px; border-radius:50%; background:var(--accent)}
-.sitebar a.home:hover{color:var(--accent)}
-.sitebar .crumb{font-size:13px; color:var(--faint)}
-
-/* header */
-header{border-bottom:1px solid var(--line-soft)}
-.bar{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:16px}
-.mark{font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:19px; letter-spacing:-.03em}
-.mark span{color:var(--accent); transition:color .25s ease}
-.signin{font-size:14px; color:var(--muted); text-decoration:none; border-bottom:1px solid var(--line)}
-.signin:hover{color:var(--ink)}
 
 /* hero */
 .hero{padding:56px 0 8px; max-width:640px}
@@ -160,7 +176,7 @@ summary::after{content:"+"; float:right; color:var(--faint); font-weight:400}
 details[open] summary::after{content:"\2013"}
 details p{margin:10px 0 2px; color:var(--muted); font-size:14.5px; max-width:70ch}
 
-footer{margin-top:64px; padding:26px 0 46px; border-top:1px solid var(--line-soft); font-size:13px; color:var(--faint)}
+.price-disclaimer{margin-top:64px; padding:26px 0 0; border-top:1px solid var(--line-soft); font-size:13px; color:var(--faint)}
 footer a{color:var(--muted); text-decoration:none}
 footer a:hover{color:var(--ink)}
 
@@ -176,19 +192,35 @@ footer a:hover{color:var(--ink)}
 </head>
 <body>
 
-<div class="sitebar">
-  <div class="wrap sitebar-row">
-    <a class="home" href="index.html"><span class="dot"></span>ParentCircle</a>
-    <span class="crumb">Membership</span>
-  </div>
-</div>
-
-<header>
-  <div class="wrap bar">
-    <div class="mark">Parent<span>Circle</span></div>
-    <a class="signin" href="#">Sign in</a>
+<header class="site-header">
+  <div class="container header-row">
+    <a class="logo" href="index.html" aria-label="ParentCircle home">
+      <img src="assets/logo.svg" alt="ParentCircle">
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="parenting.html">Parenting</a>
+      <a href="learning.html">Learning</a>
+      <a href="wellness.html">Wellness</a>
+      <a href="lifestyle.html">Lifestyle</a>
+      <a href="index.html#features">Tools</a>
+      <a href="index.html#community">Community</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn ghost small" href="membership.html">Membership</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
+<div class="breadcrumb-bar">
+  <div class="container">
+    <nav aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="sep">/</span><span class="current">Membership</span>
+    </nav>
+  </div>
+</div>
 
 <main class="wrap">
 
@@ -309,14 +341,62 @@ footer a:hover{color:var(--ink)}
     <details><summary>How do I cancel?</summary><p>From your profile, in two taps. Your plan runs until the end of the period you have paid for.</p></details>
   </section>
 
-  <footer>
-    Prices in Indian rupees, inclusive of GST. UPI, cards and net banking accepted.<br>
-    ParentCircle is published by Shri Harini Media Ltd.<br>
-    <a href="index.html">&larr; Back to ParentCircle home</a>
-  </footer>
+  <p class="price-disclaimer">Prices in Indian rupees, inclusive of GST. UPI, cards and net banking accepted. ParentCircle is published by Shri Harini Media Ltd.</p>
 
 </main>
 
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="ParentCircle" height="24">
+        <p>A parenting companion for the whole journey &mdash; from your child&rsquo;s first year to their last year at home.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="ParentCircle on Facebook">f</a>
+          <a href="#" aria-label="ParentCircle on Instagram">ig</a>
+          <a href="#" aria-label="ParentCircle on YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="parenting.html">Parenting</a></li>
+          <li><a href="learning.html">Learning</a></li>
+          <li><a href="wellness.html">Wellness</a></li>
+          <li><a href="lifestyle.html">Lifestyle</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="index.html#poll">Poll of the Day</a></li>
+          <li><a href="tools/parenting-style.html">Know Your Parenting Style</a></li>
+          <li><a href="tools/parenting-tips.html">Get Your Parenting Tips</a></li>
+          <li><a href="https://www.parentcircle.com/ask-the-expert/faqs?utm_source=PC&amp;utm_medium=referral&amp;utm_campaign=FAQs-HPRoundedIcon" target="_blank" rel="noopener">Ask the Experts</a></li>
+          <li><a href="https://www.parentcircle.com/communities" target="_blank" rel="noopener">Parents Community</a></li>
+          <li><a href="index.html#today">Today&rsquo;s Quote &amp; Tip</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>ParentCircle</h5>
+        <ul>
+          <li><a href="index.html#why">Why ParentCircle</a></li>
+          <li><a href="index.html#about">What is ParentCircle</a></li>
+          <li><a href="index.html#featured">Featured Articles</a></li>
+          <li><a href="index.html#authors">Browse by Author</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="#">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> ParentCircle. All rights reserved.</span>
+      <span>Made for parents, by parents.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 <script>
 (function(){
   var STAGES = [

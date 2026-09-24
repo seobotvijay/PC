@@ -69,16 +69,32 @@
     <a class="logo" href="../index.html" aria-label="ParentCircle home">
       <img src="../assets/logo.svg" alt="ParentCircle">
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <a href="../index.html#featured">Featured Articles</a>
-      <a href="../index.html#authors">Browse by Author</a>
-      <a href="../membership.html">Membership</a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="../parenting.html">Parenting</a>
+      <a href="../learning.html">Learning</a>
+      <a href="../wellness.html">Wellness</a>
+      <a href="../lifestyle.html">Lifestyle</a>
+      <a href="../index.html#features">Tools</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#about">About</a>
     </nav>
+    <div class="header-actions">
+      <a class="btn ghost small" href="../membership.html">Membership</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
+<div class="breadcrumb-bar">
+  <div class="container">
+    <nav aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#authors">Browse by Author</a><span class="sep">/</span><span class="current">Anjali Rao</span>
+    </nav>
+  </div>
+</div>
 
 <main class="article-page author-page">
-  <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../index.html#authors">Browse by Author</a> &rsaquo; Anjali Rao</p>
 
   <div class="author-hero">
     <span class="author-hero-avatar" style="background:var(--marigold)">AR</span>
@@ -111,11 +127,57 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-bottom" style="border-top:none">
-    <span>&copy; 2026 ParentCircle. All rights reserved.</span>
-    <a href="../index.html" style="color:var(--ink-soft); text-decoration:none">&larr; Back to ParentCircle home</a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo.svg" alt="ParentCircle" height="24">
+        <p>A parenting companion for the whole journey &mdash; from your child&rsquo;s first year to their last year at home.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="ParentCircle on Facebook">f</a>
+          <a href="#" aria-label="ParentCircle on Instagram">ig</a>
+          <a href="#" aria-label="ParentCircle on YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="../parenting.html">Parenting</a></li>
+          <li><a href="../learning.html">Learning</a></li>
+          <li><a href="../wellness.html">Wellness</a></li>
+          <li><a href="../lifestyle.html">Lifestyle</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="../index.html#poll">Poll of the Day</a></li>
+          <li><a href="../tools/parenting-style.html">Know Your Parenting Style</a></li>
+          <li><a href="../tools/parenting-tips.html">Get Your Parenting Tips</a></li>
+          <li><a href="https://www.parentcircle.com/ask-the-expert/faqs?utm_source=PC&amp;utm_medium=referral&amp;utm_campaign=FAQs-HPRoundedIcon" target="_blank" rel="noopener">Ask the Experts</a></li>
+          <li><a href="https://www.parentcircle.com/communities" target="_blank" rel="noopener">Parents Community</a></li>
+          <li><a href="../index.html#today">Today&rsquo;s Quote &amp; Tip</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>ParentCircle</h5>
+        <ul>
+          <li><a href="../index.html#why">Why ParentCircle</a></li>
+          <li><a href="../index.html#about">What is ParentCircle</a></li>
+          <li><a href="../index.html#featured">Featured Articles</a></li>
+          <li><a href="../index.html#authors">Browse by Author</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../membership.html">Membership</a></li>
+          <li><a href="#">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> ParentCircle. All rights reserved.</span>
+      <span>Made for parents, by parents.</span>
+    </div>
   </div>
 </footer>
 
+<script src="../js/main.js"></script>
 </body>
 </html>
