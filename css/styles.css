@@ -263,17 +263,11 @@ section{padding:56px 0}
 .faq-item[open] summary::after{content:'\2212'}
 .faq-item p{margin:0 0 18px; color:var(--ink-soft); font-size:.96rem; max-width:70ch}
 
-/* Newsletter */
+/* Membership band */
 .newsletter{background:linear-gradient(135deg, color-mix(in srgb, var(--indigo) 14%, var(--paper)), color-mix(in srgb, var(--marigold) 10%, var(--paper)))}
 .newsletter-box{display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:var(--card); border:1.5px solid var(--line); border-radius:22px; padding:32px}
 .newsletter-box h3{font-family:'Newsreader', Georgia, serif; font-weight:400; font-size:1.5rem; margin:0 0 6px}
-.newsletter-box p{margin:0; color:var(--ink-soft); font-size:.95rem}
-.newsletter-form{display:flex; gap:10px; flex-wrap:wrap}
-.newsletter-form input{
-  font-family:inherit; font-size:.95rem; padding:12px 16px; border-radius:100px; border:1.5px solid var(--line);
-  background:var(--paper); color:var(--ink); min-width:220px;
-}
-.newsletter-status{font-size:.85rem; color:var(--teal); margin-top:10px; min-height:1em}
+.newsletter-box p{margin:0; color:var(--ink-soft); font-size:.95rem; max-width:44ch}
 
 /* Footer */
 .site-footer{background:var(--card); border-top:1px solid var(--line); padding-top:48px}

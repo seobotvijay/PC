@@ -179,18 +179,4 @@
   }
 
   initToday();
-
-  // ---- Newsletter form (client-side only, no backend configured) ----
-  var form = document.getElementById('newsletterForm');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var input = form.querySelector('input[type="email"]');
-      var status = document.getElementById('newsletterStatus');
-      var email = input.value.trim();
-      if (!email) return;
-      status.textContent = 'Thanks! We’ll send parenting tips to ' + email + '.';
-      form.reset();
-    });
-  }
 })();
