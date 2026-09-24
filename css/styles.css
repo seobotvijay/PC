@@ -174,6 +174,7 @@ section{padding:56px 0}
 .article-tag{font-size:.76rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase}
 .article-card h3{font-family:'Newsreader', Georgia, serif; font-weight:500; font-size:1.18rem; line-height:1.35; margin:0}
 .article-card p{font-size:.9rem; color:var(--ink-soft); margin:0; flex:1}
+.article-byline{font-size:.8rem; color:var(--ink-soft); font-weight:600}
 .article-read{font-size:.86rem; font-weight:600; color:var(--indigo)}
 
 /* Poll of the day */
