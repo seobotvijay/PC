@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ParentCircle Membership &mdash; Plans for Every Stage</title>
+<meta name="description" content="Pick your child's stage and see ParentCircle's Free, Plus and Pro membership plans &mdash; articles, community, expert answers and a parenting chatbot for your stage.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.parentcircle-demo.example.com/membership.html">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#191B26; --muted:#5F6377; --faint:#8A8E9E;
+  --paper:#FFFFFF; --surface:#F3F2EF; --line:#E4E2DC; --line-soft:#EDEBE6;
+  --accent:#E8A33D; --accent-ink:#191B26;
+  --shadow:0 1px 2px rgba(25,27,38,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#ECEDF3; --muted:#A0A4B6; --faint:#767B8D;
+    --paper:#14151C; --surface:#1B1D26; --line:#2C2F3C; --line-soft:#23262F;
+    --accent-ink:#14151C;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#ECEDF3; --muted:#A0A4B6; --faint:#767B8D;
+  --paper:#14151C; --surface:#1B1D26; --line:#2C2F3C; --line-soft:#23262F;
+  --accent-ink:#14151C;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1060px; margin:0 auto; padding:0 24px}
+h1,h2,h3,.num{font-family:"Bricolage Grotesque","Instrument Sans",sans-serif; font-weight:800; letter-spacing:-.02em; line-height:1.1; margin:0}
+
+/* site bar (links back to the main ParentCircle site) */
+.sitebar{border-bottom:1px solid var(--line-soft); background:var(--surface)}
+.sitebar-row{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.sitebar a.home{display:flex; align-items:center; gap:8px; text-decoration:none; font-weight:600; font-size:13.5px; color:var(--ink)}
+.sitebar a.home .dot{width:7px; height:7px; border-radius:50%; background:var(--accent)}
+.sitebar a.home:hover{color:var(--accent)}
+.sitebar .crumb{font-size:13px; color:var(--faint)}
+
+/* header */
+header{border-bottom:1px solid var(--line-soft)}
+.bar{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:16px}
+.mark{font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:19px; letter-spacing:-.03em}
+.mark span{color:var(--accent); transition:color .25s ease}
+.signin{font-size:14px; color:var(--muted); text-decoration:none; border-bottom:1px solid var(--line)}
+.signin:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:56px 0 8px; max-width:640px}
+.hero h1{font-size:clamp(30px,5.2vw,46px)}
+.hero p{color:var(--muted); font-size:17px; margin:14px 0 0; max-width:52ch}
+
+/* stage rail */
+.rail-label{font-size:13px; color:var(--faint); margin:40px 0 12px}
+.rail{display:flex; gap:8px; flex-wrap:wrap}
+.stage{
+  appearance:none; cursor:pointer; font:inherit; font-size:14px; font-weight:500;
+  background:var(--paper); color:var(--ink);
+  border:1px solid var(--line); border-radius:999px; padding:9px 16px;
+  display:flex; align-items:baseline; gap:8px;
+  transition:background .18s ease, border-color .18s ease, color .18s ease;
+}
+.stage .yrs{font-weight:600; font-variant-numeric:tabular-nums}
+.stage .nm{color:var(--muted); transition:color .18s ease}
+.stage:hover{border-color:var(--faint)}
+.stage[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+.stage[aria-pressed="true"] .nm{color:var(--accent-ink); opacity:.72}
+.stage:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+
+/* stage detail */
+.detail{
+  margin-top:22px; padding:22px 24px; border-radius:14px;
+  background:var(--surface); border-left:4px solid var(--accent);
+  transition:border-color .25s ease;
+}
+.detail h2{font-size:19px; font-weight:600; letter-spacing:-.01em}
+.hooks{list-style:none; margin:14px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px 10px}
+.hooks li{font-size:14px; color:var(--muted); background:var(--paper); border:1px solid var(--line-soft); border-radius:8px; padding:5px 11px}
+
+/* billing toggle */
+.billing{display:flex; align-items:center; gap:14px; margin:52px 0 20px; flex-wrap:wrap}
+.seg{display:inline-flex; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:3px}
+.seg button{
+  appearance:none; cursor:pointer; font:inherit; font-size:14px; font-weight:500;
+  background:transparent; color:var(--muted); border:0; border-radius:7px; padding:7px 15px;
+}
+.seg button[aria-pressed="true"]{background:var(--paper); color:var(--ink); box-shadow:var(--shadow)}
+.seg button:focus-visible{outline:2px solid var(--ink); outline-offset:1px}
+.save{font-size:13px; color:var(--muted)}
+
+/* plans */
+.plans{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-items:start}
+.plan{
+  background:var(--paper); border:1px solid var(--line); border-radius:14px;
+  padding:26px 24px 24px; display:flex; flex-direction:column; min-height:100%;
+}
+.plan.pick{border-color:var(--accent); border-width:2px; padding:25px 23px 23px}
+.plan h3{font-size:17px; font-weight:600; letter-spacing:-.01em}
+.tag{font-size:12.5px; color:var(--accent); font-weight:600; margin:0 0 8px}
+.plan .blurb{font-size:14px; color:var(--muted); margin:6px 0 0; min-height:40px}
+.price{margin:20px 0 2px; display:flex; align-items:baseline; gap:6px}
+.price .num{font-size:34px; font-variant-numeric:tabular-nums}
+.price .per{font-size:14px; color:var(--muted)}
+.billed{font-size:13px; color:var(--faint); min-height:20px}
+.feat{list-style:none; margin:20px 0 24px; padding:0; flex:1}
+.feat li{font-size:14.5px; padding:7px 0 7px 22px; position:relative; border-top:1px solid var(--line-soft)}
+.feat li:first-child{border-top:0}
+.feat li::before{content:""; position:absolute; left:2px; top:15px; width:9px; height:9px; border-radius:50%; background:var(--accent); transition:background .25s ease}
+.feat li.off{color:var(--faint)}
+.feat li.off::before{background:transparent; border:1px solid var(--line)}
+.cta{
+  appearance:none; cursor:pointer; font:inherit; font-size:15px; font-weight:600;
+  width:100%; padding:12px 16px; border-radius:10px; border:1px solid var(--ink);
+  background:transparent; color:var(--ink); text-align:center;
+}
+.cta.solid{background:var(--ink); color:var(--paper)}
+.cta:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* addon + notes */
+.addon{
+  margin-top:18px; padding:18px 22px; border:1px dashed var(--line); border-radius:12px;
+  display:flex; gap:16px; align-items:baseline; justify-content:space-between; flex-wrap:wrap;
+}
+.addon p{margin:0; font-size:14.5px; color:var(--muted); max-width:60ch}
+.addon strong{color:var(--ink); font-weight:600}
+.addon .amt{font-size:15px; font-weight:600; white-space:nowrap}
+
+/* compare */
+.compare{margin:64px 0 0}
+.compare h2{font-size:22px; margin-bottom:18px}
+.scroller{overflow-x:auto}
+table{border-collapse:collapse; width:100%; min-width:520px; font-size:14.5px}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{font-weight:600; font-size:13px; color:var(--muted); border-bottom:1px solid var(--line)}
+tbody th{font-weight:400; color:var(--muted)}
+td{font-variant-numeric:tabular-nums}
+td.no{color:var(--faint)}
+
+/* faq */
+.faq{margin:60px 0 0}
+.faq h2{font-size:22px; margin-bottom:8px}
+details{border-bottom:1px solid var(--line-soft); padding:14px 0}
+summary{cursor:pointer; font-weight:500; font-size:15.5px; list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; float:right; color:var(--faint); font-weight:400}
+details[open] summary::after{content:"\2013"}
+details p{margin:10px 0 2px; color:var(--muted); font-size:14.5px; max-width:70ch}
+
+footer{margin-top:64px; padding:26px 0 46px; border-top:1px solid var(--line-soft); font-size:13px; color:var(--faint)}
+footer a{color:var(--muted); text-decoration:none}
+footer a:hover{color:var(--ink)}
+
+@media (max-width:820px){
+  .plans{grid-template-columns:1fr}
+  .plan.pick{order:-1}
+  .hero{padding-top:36px}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<div class="sitebar">
+  <div class="wrap sitebar-row">
+    <a class="home" href="index.html"><span class="dot"></span>ParentCircle</a>
+    <span class="crumb">Membership</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap bar">
+    <div class="mark">Parent<span>Circle</span></div>
+    <a class="signin" href="#">Sign in</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <h1>Parenting advice that matches your child&rsquo;s age.</h1>
+    <p>Pick the stage your child is in. Your feed, your community, your expert answers and your chatbot all follow from there.</p>
+  </section>
+
+  <p class="rail-label">Your child&rsquo;s stage</p>
+  <div class="rail" role="group" aria-label="Choose your child's stage">
+    <button class="stage" data-i="0" aria-pressed="false"><span class="yrs">0&ndash;2</span> <span class="nm">Little Ones</span></button>
+    <button class="stage" data-i="1" aria-pressed="true"><span class="yrs">3&ndash;6</span> <span class="nm">Early Years</span></button>
+    <button class="stage" data-i="2" aria-pressed="false"><span class="yrs">7&ndash;10</span> <span class="nm">School Years</span></button>
+    <button class="stage" data-i="3" aria-pressed="false"><span class="yrs">11&ndash;18</span> <span class="nm">Teen Years</span></button>
+    <button class="stage" data-i="4" aria-pressed="false"><span class="yrs">Any age</span> <span class="nm">Special Needs</span></button>
+  </div>
+
+  <div class="detail">
+    <h2 id="dTitle">Early Years, ages 3 to 6</h2>
+    <ul class="hooks" id="dHooks"></ul>
+  </div>
+
+  <div class="billing">
+    <div class="seg" role="group" aria-label="Billing period">
+      <button id="bYear" aria-pressed="true">Yearly</button>
+      <button id="bMonth" aria-pressed="false">Monthly</button>
+    </div>
+    <span class="save" id="saveNote">Two months free on yearly</span>
+  </div>
+
+  <section class="plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <p class="blurb">Read, browse and join the conversation.</p>
+      <div class="price"><span class="num">&#8377;0</span></div>
+      <p class="billed">Always free</p>
+      <ul class="feat">
+        <li>Every article for your stage</li>
+        <li>Community discussions, read and post</li>
+        <li>Public expert answers</li>
+        <li>Tamil edition</li>
+        <li class="off">5 chatbot questions a month</li>
+        <li class="off">Ads shown</li>
+      </ul>
+      <button class="cta">Create a free account</button>
+    </div>
+
+    <div class="plan pick">
+      <p class="tag">Most parents start here</p>
+      <h3>Plus</h3>
+      <p class="blurb">The full library, no ads getting in the way.</p>
+      <div class="price"><span class="num" id="pPlus">&#8377;999</span><span class="per" id="uPlus">a year</span></div>
+      <p class="billed" id="bPlus">Works out to &#8377;83 a month</p>
+      <ul class="feat">
+        <li>Everything in Free</li>
+        <li>Ad-light reading</li>
+        <li>Unlimited chatbot, tuned to your stage</li>
+        <li>Full video and podcast library</li>
+        <li>A weekly plan for your stage</li>
+        <li>Printable charts and activity sheets</li>
+        <li>Submit a question to the expert panel each quarter</li>
+      </ul>
+      <button class="cta solid">Start 7-day free trial</button>
+    </div>
+
+    <div class="plan">
+      <h3>Pro</h3>
+      <p class="blurb">Add live experts and workshops for two children.</p>
+      <div class="price"><span class="num" id="pPro">&#8377;2,999</span><span class="per" id="uPro">a year</span></div>
+      <p class="billed" id="bPro">Works out to &#8377;250 a month</p>
+      <ul class="feat">
+        <li>Everything in Plus</li>
+        <li>A private expert answer every month</li>
+        <li>A live parenting workshop every month</li>
+        <li>Two stages included, for two children</li>
+        <li>Ad-free reading</li>
+        <li>Early access to new videos and episodes</li>
+      </ul>
+      <button class="cta">Start 7-day free trial</button>
+    </div>
+  </section>
+
+  <div class="addon">
+    <p><strong>More than one child?</strong> Add a second stage to Plus and your feed, chatbot and community switch between them. Pro already covers two.</p>
+    <span class="amt">+&#8377;299 a year</span>
+  </div>
+
+  <section class="compare">
+    <h2>What each plan includes</h2>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr><th scope="col">&nbsp;</th><th scope="col">Free</th><th scope="col">Plus</th><th scope="col">Pro</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Articles and tips for your stage</th><td>All</td><td>All</td><td>All</td></tr>
+          <tr><th scope="row">Community discussions</th><td>Read and post</td><td>Read and post</td><td>Read and post</td></tr>
+          <tr><th scope="row">Parenting chatbot</th><td>5 questions a month</td><td>Unlimited</td><td>Unlimited, remembers your stage</td></tr>
+          <tr><th scope="row">Videos and podcast</th><td>Latest 5</td><td>Full library</td><td>Full library, early access</td></tr>
+          <tr><th scope="row">Ask the expert</th><td>Read public answers</td><td>Submit 1 a quarter</td><td>Private answer, 1 a month</td></tr>
+          <tr><th scope="row">Live workshops</th><td class="no">Not included</td><td>1 free a quarter</td><td>Every month</td></tr>
+          <tr><th scope="row">Weekly stage plan</th><td class="no">Not included</td><td>Included</td><td>Included</td></tr>
+          <tr><th scope="row">Printables and activity sheets</th><td class="no">Not included</td><td>Included</td><td>Included, plus kits</td></tr>
+          <tr><th scope="row">Advertising</th><td>Shown</td><td>Reduced</td><td>None</td></tr>
+          <tr><th scope="row">Children covered</th><td>1 stage</td><td>1 stage, +&#8377;299 for a second</td><td>2 stages</td></tr>
+          <tr><th scope="row">Tamil edition</th><td>Included</td><td>Included</td><td>Included</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Questions parents ask</h2>
+    <details><summary>What happens when my child moves to the next stage?</summary><p>Change your stage any time from your profile. Nothing is locked, and your saved articles and community history stay with you.</p></details>
+    <details><summary>Can I pay monthly instead?</summary><p>Yes. Switch to monthly above. Yearly works out cheaper, and you can move between the two whenever you like.</p></details>
+    <details><summary>How does the free trial work?</summary><p>Seven days of Pro. Cancel before day seven and you are not charged. We send a reminder on day five.</p></details>
+    <details><summary>Is the chatbot a replacement for a doctor?</summary><p>No. It answers everyday parenting questions using ParentCircle&rsquo;s own expert-reviewed content, and it will tell you when something needs a paediatrician or a counsellor.</p></details>
+    <details><summary>How do I cancel?</summary><p>From your profile, in two taps. Your plan runs until the end of the period you have paid for.</p></details>
+  </section>
+
+  <footer>
+    Prices in Indian rupees, inclusive of GST. UPI, cards and net banking accepted.<br>
+    ParentCircle is published by Shri Harini Media Ltd.<br>
+    <a href="index.html">&larr; Back to ParentCircle home</a>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var STAGES = [
+    {t:"Little Ones, ages 0 to 2", c:"#E05C74", h:["Sleep and night waking","Feeding and weaning","Milestones month by month","First fevers and vaccinations"]},
+    {t:"Early Years, ages 3 to 6", c:"#E8A33D", h:["Getting ready for school","Tantrums and big feelings","Screen time that works","Early reading and phonics"]},
+    {t:"School Years, ages 7 to 10", c:"#1F9187", h:["Homework without the fight","Friendships and fitting in","Lunchboxes and fussy eating","Building confidence"]},
+    {t:"Teen Years, ages 11 to 18", c:"#4C5FD5", h:["Exam stress and study habits","Mental health and mood","Phones, privacy and boundaries","Streams and career choices"]},
+    {t:"Special Needs, any age", c:"#7D5BA6", h:["Therapies and what to expect","School support and IEPs","Inclusion at home and outside","Looking after yourself too"]}
+  ];
+  var btns = document.querySelectorAll('.stage');
+  var dTitle = document.getElementById('dTitle');
+  var dHooks = document.getElementById('dHooks');
+  var root = document.documentElement;
+
+  function paint(i){
+    var s = STAGES[i];
+    root.style.setProperty('--accent', s.c);
+    dTitle.textContent = s.t;
+    dHooks.innerHTML = '';
+    for (var k = 0; k < s.h.length; k++){
+      var li = document.createElement('li');
+      li.textContent = s.h[k];
+      dHooks.appendChild(li);
+    }
+    for (var j = 0; j < btns.length; j++){
+      btns[j].setAttribute('aria-pressed', j === i ? 'true' : 'false');
+    }
+  }
+  for (var j = 0; j < btns.length; j++){
+    btns[j].addEventListener('click', function(){ paint(parseInt(this.getAttribute('data-i'), 10)); });
+  }
+  paint(1);
+
+  var bYear = document.getElementById('bYear'), bMonth = document.getElementById('bMonth');
+  var els = {
+    pPlus: document.getElementById('pPlus'), uPlus: document.getElementById('uPlus'), bPlusN: document.getElementById('bPlus'),
+    pPro: document.getElementById('pPro'), uPro: document.getElementById('uPro'), bProN: document.getElementById('bPro'),
+    save: document.getElementById('saveNote')
+  };
+  function bill(yearly){
+    bYear.setAttribute('aria-pressed', yearly ? 'true' : 'false');
+    bMonth.setAttribute('aria-pressed', yearly ? 'false' : 'true');
+    els.pPlus.textContent = yearly ? '₹999' : '₹129';
+    els.pPro.textContent  = yearly ? '₹2,999' : '₹349';
+    els.uPlus.textContent = yearly ? 'a year' : 'a month';
+    els.uPro.textContent  = yearly ? 'a year' : 'a month';
+    els.bPlusN.textContent = yearly ? 'Works out to ₹83 a month' : 'Billed every month';
+    els.bProN.textContent  = yearly ? 'Works out to ₹250 a month' : 'Billed every month';
+    els.save.textContent = yearly ? 'Two months free on yearly' : 'Save 35% by paying yearly';
+  }
+  bYear.addEventListener('click', function(){ bill(true); });
+  bMonth.addEventListener('click', function(){ bill(false); });
+})();
+</script>
+</body>
+</html>
